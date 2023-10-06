@@ -1,0 +1,80 @@
+@import "../../../styles/extends";
+@import "../../../styles/mixins";
+@import "../../../theme/index";
+
+.details {
+  @include themeHandler() {
+    .articleDetails {
+      @include marginB(80px);
+
+      // ---------- Main Description is here!
+
+      > div:nth-child(1) {
+        @include paddingB(40px);
+      }
+
+      .publicationDate {
+        @extend %extends-flex-x-between;
+        @include marginB(20px);
+        @extend %extends-font-size-14px;
+
+        @include minWidth($tablet) {
+          @include x(flex-start);
+        }
+
+        > p {
+          @extend %extends-color-middle-dark;
+
+          &.author {
+            @include minWidth($tablet) {
+              @include marginR(40px);
+            }
+          }
+
+          // &.timestamp { } // *
+        }
+      }
+
+      .thumb {
+        @extend %extends-position-relative;
+        @extend %extends-flex-x-center-y-center;
+        @include marginB(20px);
+        @include borderRadius(8px);
+        @extend %extends-overflow-hidden;
+
+        @include minWidth($tablet) {
+          @include borderRadius(10px);
+        }
+
+        @include minWidth($desktop) {
+          @include borderRadius(14px);
+        }
+      }
+
+      .id {
+        @include fontSize(12px);
+        @include marginB(30px);
+        @extend %extends-color-middle-dark;
+      }
+
+      .articleElements {
+        > h3 {
+          @extend %extends-transition-04s-ease;
+
+          &:not(:last-child) {
+            @include marginB(20px);
+            @include paddingT(10px);
+          }
+        }
+
+        > p {
+          @extend %extends-transition-04s-ease;
+
+          &:not(:last-child) {
+            @include marginB(30px);
+          }
+        }
+      }
+    }
+  }
+}

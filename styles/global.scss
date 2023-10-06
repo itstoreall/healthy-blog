@@ -1,0 +1,102 @@
+@import "../styles/extends";
+@import "../styles/mixins";
+@import "../styles/vars";
+@import "../theme/index";
+
+body {
+  margin: 0;
+  height: 100%;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include bgColor($light);
+  @include transition(background-color 0.4s ease);
+}
+
+* {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  @extend %extends-color-middle-grey;
+}
+
+p {
+  margin: 0;
+  @extend %extends-color-middle-grey;
+}
+
+button {
+  border: none;
+  @include bgColor(transparent);
+}
+
+a {
+  display: block;
+  @extend %extends-color-middle-grey;
+}
+
+img {
+  display: block;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.globalWrapper {
+  @extend %extends-width-100;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: $max;
+  min-height: 100vh;
+}
+
+[data-theme="light"] body {
+  @extend %extends-color-dark;
+  @include bgColor($light);
+
+  h1,
+  h2,
+  h3 {
+    @extend %extends-color-dark;
+  }
+
+  a {
+    @extend %extends-color-dark;
+  }
+}
+
+[data-theme="dark"] body {
+  @extend %extends-color-light;
+  @include bgColor($dark);
+
+  h1,
+  h2,
+  h3 {
+    @extend %extends-color-light;
+  }
+
+  a {
+    @extend %extends-color-light;
+  }
+}

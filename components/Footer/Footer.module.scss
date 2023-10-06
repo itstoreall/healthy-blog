@@ -1,0 +1,44 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
+
+.footer {
+  @extend %extends-display-flex;
+  @extend %extends-width-100;
+  height: $footerHeight;
+
+  .content {
+    @include themeHandler() {
+      @extend %extends-flex-dir-colimn-x-center-y-center;
+      height: 100%;
+
+      & > div:first-child {
+        margin-bottom: 20px;
+      }
+
+      .copyrightBlock {
+        font-size: $footerCopyrightFontSize;
+        @include color(var(--middleGrey));
+
+        .copyright {
+          @extend %extends-flex-x-center;
+
+          .logoLink {
+            @extend %extends-flex-y-center;
+            @include logo($footerCopyrightFontSize, 3px);
+            @include color(inherit);
+
+            &:hover {
+              @include color(var(--button));
+            }
+          }
+
+          .copyrightIcon {
+            margin: 0 7px 0 5px;
+          }
+        }
+      }
+    }
+  }
+}

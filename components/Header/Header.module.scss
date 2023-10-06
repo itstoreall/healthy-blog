@@ -1,0 +1,20 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
+
+.header {
+  @include themeHandler() {
+    @extend %extends-width-100;
+
+    .content {
+      @extend %extends-flex-x-between-y-center;
+      padding: 0 20px;
+      height: 100%;
+
+      .logo {
+        z-index: 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../theme/index.scss";
+
+.viewCounter {
+  @extend %extends-position-absolute;
+  @extend %extends-flex-y-center;
+  @extend %extends-z-index-1;
+
+  @include bgColor($middleGrey);
+  @include padding(2px 8px 2px 6px);
+  @include borderRadius(15px);
+
+  // ------- Eye (svg):
+
+  > div:nth-child(1) {
+    @include marginR(5px);
+  }
+
+  // ------- views:
+
+  .value {
+    @extend %extends-color-white;
+    @include fontSW(13px, 600);
+  }
+}

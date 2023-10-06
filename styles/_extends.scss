@@ -1,0 +1,182 @@
+@import "../theme/index.scss";
+
+// ----------- position:
+
+%extends-position-relative {
+  position: relative;
+}
+
+%extends-position-absolute {
+  position: absolute;
+}
+
+%extends-position-fixed {
+  position: fixed;
+}
+
+// ----------- display:
+
+%extends-display-flex {
+  display: flex;
+}
+
+// ----------- flex x:
+
+%extends-justify-content-center {
+  justify-content: center;
+}
+
+%extends-justify-content-end {
+  justify-content: flex-end;
+}
+
+%extends-justify-content-between {
+  justify-content: space-between;
+}
+
+%extends-flex-x-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-center;
+}
+
+%extends-flex-x-end {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-end;
+}
+
+%extends-flex-x-between {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-between;
+}
+
+// ----------- flex y:
+
+%extends-align-items-center {
+  align-items: center;
+}
+
+%extends-flex-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-align-items-center;
+}
+
+// ----------- flex x y:
+
+%extends-flex-x-center-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-center;
+  @extend %extends-align-items-center;
+}
+
+%extends-flex-x-between-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-between;
+  @extend %extends-align-items-center;
+}
+
+// ----------- flex direction:
+
+%extends-flex-direction-column {
+  flex-direction: column;
+}
+
+%extends-flex-dir-colimn-x-center-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-flex-direction-column;
+  @extend %extends-justify-content-center;
+  @extend %extends-align-items-center;
+}
+
+// ----------- width:
+
+%extends-width-100 {
+  width: 100%;
+}
+
+// ----------- ul li:
+
+%extends-list-style-none {
+  list-style: none;
+}
+
+// ----------- font:
+
+%extends-font-size-13px {
+  font-size: 13px;
+}
+
+%extends-font-size-14px {
+  font-size: 14px;
+}
+
+%extends-font-size-16px {
+  font-size: 16px;
+}
+
+%extends-font-size-18px {
+  font-size: 18px;
+}
+
+%extends-font-size-20px {
+  font-size: 20px;
+}
+
+// ----------- color:
+
+%extends-color-white {
+  color: $colorWhite;
+}
+
+%extends-color-light {
+  color: $light;
+}
+
+%extends-color-dark {
+  color: $dark;
+}
+
+%extends-color-middle-grey {
+  color: $middleGrey;
+}
+
+%extends-color-middle-dark {
+  color: $middleDark;
+}
+
+// ----------- z-index:
+
+%extends-z-index-1 {
+  z-index: 1;
+}
+
+// ----------- overflow:
+
+%extends-overflow-hidden {
+  overflow: hidden;
+}
+
+%extends-hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+}
+
+// ----------- box-shadow:
+
+%extends-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+%extends-box-shadow-hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+// ----------- transition:
+
+%extends-transition-04s-ease {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}

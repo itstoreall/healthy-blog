@@ -1,0 +1,10 @@
+@import "../styles/vars.scss";
+@import "../styles/_mixins.scss";
+
+.content {
+  padding: 20px 0;
+
+  @include minWidth($tablet) {
+    padding: 30px 0;
+  }
+}

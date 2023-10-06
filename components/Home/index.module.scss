@@ -1,0 +1,18 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.home {
+  .homeContent {
+    @include themeHandler() {
+      // ---------- Main Description is here!
+
+      > div:nth-child(1) {
+        @include paddingB(40px);
+      }
+
+      // ---------- Latest article is here!
+
+      // ---------- Top three is here!
+    }
+  }
+}

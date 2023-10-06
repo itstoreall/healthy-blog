@@ -1,0 +1,80 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.topThree {
+  @include padding(60px 0 40px);
+  @extend %extends-position-relative;
+
+  .cards {
+    .list {
+      @include themeHandler() {
+        @extend %extends-list-style-none;
+        @include padding(0);
+        @include margin(0);
+        @include marginB(-20px);
+
+        @include minWidth($tablet) {
+          @include flexWrap(wrap);
+
+          @include maxWidth($desktop - 1) {
+            @include x(space-between);
+          }
+        }
+
+        .item {
+          @include marginB(20px);
+          @include bgColor(var(--background-hover));
+          @include borderRadius(8px);
+          @extend %extends-box-shadow;
+          @extend %extends-transition-04s-ease;
+
+          &:hover {
+            @extend %extends-box-shadow-hover;
+          }
+
+          @include minWidth($tablet) {
+            @include width(49%);
+          }
+
+          @include minWidth($desktop) {
+            @include width(32%);
+
+            &:not(:nth-child(3n + 3)) {
+              @include marginR(2%);
+            }
+          }
+
+          .card {
+            .thumb {
+              @extend %extends-position-relative;
+
+              > img {
+                @include borderRadius(6px 6px 0 0);
+              }
+            }
+
+            .meta {
+              @include padding(15px 15px 20px);
+
+              h3 {
+                @include marginB(12px);
+                @include fontSize(15px);
+                @include color(var(--text));
+                @include lineClamp(1);
+                @extend %extends-transition-04s-ease;
+              }
+
+              .description {
+                @extend %extends-font-size-13px;
+                @include color(var(--text-light));
+                @include lineHight(1.4);
+                @include lineClamp(2);
+                @extend %extends-transition-04s-ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

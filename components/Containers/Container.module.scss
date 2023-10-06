@@ -1,0 +1,57 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.headerContainer {
+  margin: 0 auto;
+  @extend %extends-width-100;
+  max-width: $max;
+  height: $headerHeight;
+}
+
+.mainContainer {
+  @extend %extends-position-relative;
+  margin: 0 auto;
+
+  @include minWidth($mobile) {
+    max-width: $mobile + 100;
+  }
+
+  @include minWidth($tablet) {
+    max-width: $tablet;
+  }
+
+  @include minWidth($desktop) {
+    max-width: $desktop;
+  }
+}
+
+.fixedContainer {
+  @extend %extends-position-fixed;
+  @extend %extends-flex-x-end;
+  @extend %extends-width-100;
+  max-width: $max;
+  z-index: 2;
+}
+
+.innerContainer {
+  margin: 0 auto;
+  width: 94%;
+
+  @include minWidth($tablet) {
+    width: 96%;
+  }
+}
+
+.cardContainer {
+  @include maxWidth($tablet - 1) {
+    margin: 0 auto;
+    width: 92%;
+  }
+}
+
+.footerContainer {
+  margin: 0 auto;
+  @extend %extends-width-100;
+  max-width: $max;
+}

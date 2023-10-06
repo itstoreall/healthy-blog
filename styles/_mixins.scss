@@ -1,0 +1,293 @@
+@import "../styles/extends";
+@import "../styles/vars";
+@import "../theme/index";
+
+// ------- logo
+
+@mixin logo($size: 18px, $space: 4px) {
+  font-size: $size;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: $space;
+  text-transform: uppercase;
+}
+
+// ------- position
+
+@mixin position($p) {
+  position: $p;
+}
+
+// ------- display
+
+@mixin display($display: block) {
+  display: $display;
+}
+
+@mixin x($X) {
+  justify-content: $X;
+}
+
+@mixin y($Y) {
+  align-items: $Y;
+}
+
+@mixin flex() {
+  display: flex;
+}
+
+@mixin flexX($X: center) {
+  display: flex;
+  justify-content: $X;
+}
+
+@mixin flexY($Y: center) {
+  display: flex;
+  align-items: $Y;
+}
+
+@mixin flexXY($X: center, $Y: center) {
+  display: flex;
+  justify-content: $X;
+  align-items: $Y;
+}
+
+@mixin flexDirection($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flexDirectionY($direction: row, $Y: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $Y;
+}
+
+@mixin flexDirectionX($direction: row, $X: start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $X;
+}
+
+@mixin flexWrap($wrap: wrap) {
+  display: flex;
+  flex-wrap: $wrap;
+}
+
+// ------- padding
+
+@mixin padding($padding: 0) {
+  padding: $padding;
+}
+
+@mixin paddingT($pt: 0) {
+  padding-top: $pt;
+}
+
+@mixin paddingR($pr: 0) {
+  padding-right: $pr;
+}
+
+@mixin paddingB($pb: 0) {
+  padding-bottom: $pb;
+}
+
+@mixin paddingL($pl: 0) {
+  padding-left: $pl;
+}
+
+// ------- margin
+
+@mixin margin($margin: 0) {
+  margin: $margin;
+}
+
+@mixin marginR($mr: 0) {
+  margin-right: $mr;
+}
+
+@mixin marginB($mb: 0) {
+  margin-bottom: $mb;
+}
+
+// ------- width / height
+
+@mixin width($width: auto) {
+  width: $width;
+}
+
+@mixin height($height: auto) {
+  height: $height;
+}
+
+@mixin widthHeight($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+// ------- Font
+
+@mixin fontSize($size) {
+  font-size: $size;
+}
+
+@mixin fontSW($s, $w) {
+  font-size: $s;
+  font-weight: $w;
+}
+
+@mixin lineHight($lh) {
+  line-height: $lh;
+}
+
+@mixin color($c) {
+  color: $c;
+}
+
+@mixin uppercase() {
+  text-transform: uppercase;
+}
+
+@mixin wordWrap($ww) {
+  word-wrap: $ww;
+}
+
+// ------- background:
+
+@mixin bgColor($bgc) {
+  background-color: $bgc;
+}
+
+// ------- border:
+
+@mixin borderRadius($br) {
+  border-radius: $br;
+}
+
+// ------- transition
+
+@mixin transition($tsn) {
+  -webkit-transition: $tsn;
+  transition: $tsn;
+}
+
+// ------- theme
+
+@mixin themeHandler() {
+  &.dark {
+    @include theme("light");
+
+    @content;
+  }
+
+  &.light {
+    @include theme("dark");
+
+    @content;
+  }
+}
+
+// ------- @media
+
+@mixin minWidth($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin maxWidth($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin widthRange($minWidth, $maxWidth) {
+  @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+// ------- Custom
+
+@mixin lineClamp($l: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  @extend %extends-overflow-hidden;
+  -webkit-line-clamp: $l;
+}
+
+@mixin buttonStyle() {
+  @include padding(5px 12px);
+  font-weight: 600;
+  @extend %extends-font-size-14px;
+  @include color($colorWhite);
+  @include bgColor($middleGrey);
+  @include borderRadius(4px);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    @include bgColor($middleGreyHover);
+  }
+}
+
+@mixin contrastSolidButton() {
+  @include padding(8px 15px);
+  @include fontSW(14px, 600);
+  @include color(var(--text-invert));
+  @include bgColor(var(--contrast-background));
+  @include borderRadius(6px);
+  cursor: pointer;
+  @include transition($s04);
+  user-select: none;
+
+  &:hover {
+    @include bgColor(var(--contrast-background-hover));
+  }
+
+  // &:active {
+  //   background-color: red;
+  // }
+}
+
+@mixin techButton() {
+  @include flexXY(center, center);
+  @include padding(0 8px);
+  @include height(26px);
+  @include fontSize(12px);
+  font-weight: 400;
+  color: $colorWhite;
+  @include bgColor($middleGrey);
+  @include borderRadius(4px);
+  cursor: pointer;
+  user-select: none;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    @include bgColor($middleGreyHover);
+  }
+}
+
+@mixin pageDescription() {
+  @include color(var(--text-light));
+  @extend %extends-transition-04s-ease;
+
+  &:not(:last-child) {
+    @include marginB(40px);
+  }
+
+  @extend %extends-font-size-14px;
+  @include lineHight(1.4);
+
+  @include minWidth($tablet) {
+    @include fontSize(16px);
+  }
+
+  @include minWidth($desktop) {
+    @include fontSize(18px);
+  }
+}
