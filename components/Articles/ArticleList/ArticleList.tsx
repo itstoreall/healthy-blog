@@ -15,7 +15,7 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
   return (
     <InnerContainer>
       <div className={`${s.articlesWrap} ${s[currentTheme]}`}>
-        <Label text={"Статьи"} />
+        <Label text={"Статті"} />
         <Cards articles={articles} />
       </div>
     </InnerContainer>

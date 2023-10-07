@@ -46,7 +46,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
   return (
     <div className={s.latestArticleWrap}>
-      <Label text={"Недавняя публикация"} />
+      <Label text={"Остання публікація"} />
 
       {latestArt && (
         <Link href={`/articles/${latestArt.id}`}>
@@ -62,7 +62,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
               <ImageHandler
                 cid={latestArt.ipfs}
-                alt={"Вселенная и тонкий мир"}
+                alt={"всесвіт"}
                 grayscale={imgFilter()}
               />
             </div>
