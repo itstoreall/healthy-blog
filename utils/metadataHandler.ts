@@ -6,7 +6,7 @@ const domain = SITE_DOMAIN;
 const ipfs = WEB3_STORAGE;
 
 const defaultImage = {
-  url: `${domain}/_next/static/media/defaultImage.537bc5b3.jpg`,
+  url: `${domain}/_next/static/media/defaultImage.d4887a00.jpg`,
   width: 1200,
   height: 675,
   alt: "Всесвіт",
