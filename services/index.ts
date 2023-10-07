@@ -1,13 +1,19 @@
-import { getClient } from "@/lib/client";
+import getServerClient from "@/lib/serverClient";
+import getFunctionClient from "@/lib/functionClient";
 import GET_ARTICLES from "@/gql/getArticles";
 import GET_ARTICLE_BY_ID from "@/gql/getArticleById";
 import UPDATE_ARTICLE_VIEWS from "@/gql/updateArticleViews";
 import { BLOG_NAME } from "@/constants";
+import { IArticle } from "@/interfaces";
 
 const blogName = BLOG_NAME;
 
-const getArticles = async () => {
-  const { data } = await getClient().query({
+interface IClientArticles {
+  articles: IArticle[];
+}
+
+const getServerArticles = async () => {
+  const { data } = await getServerClient().query({
     query: GET_ARTICLES,
     variables: { blog: blogName },
     context: {
@@ -21,7 +27,7 @@ const getArticles = async () => {
 };
 
 const getArticle = async (id: string) => {
-  const { data } = await getClient().query({
+  const { data } = await getServerClient().query({
     query: GET_ARTICLE_BY_ID,
     variables: { blog: blogName, id },
     context: {
@@ -35,7 +41,7 @@ const getArticle = async (id: string) => {
 };
 
 const updatetArticleViews = async (id: string) => {
-  const { data } = await getClient().mutate({
+  const { data } = await getServerClient().mutate({
     mutation: UPDATE_ARTICLE_VIEWS,
     variables: { blog: blogName, ID: id },
     context: {
@@ -49,7 +55,7 @@ const updatetArticleViews = async (id: string) => {
 };
 
 const services = {
-  getArticles,
+  getServerArticles,
   getArticle,
   updatetArticleViews,
 };
