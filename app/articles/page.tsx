@@ -7,7 +7,7 @@ import metadataHandler from "@/utils/metadataHandler";
 export const metadata: Metadata = metadataHandler("/articles");
 
 const Articles = async () => {
-  const articles = await services.getArticles();
+  const articles = await services.getServerArticles();
 
   if (!articles?.length) return <p>no articles</p>;
 
