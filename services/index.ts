@@ -1,16 +1,10 @@
 import getServerClient from "@/lib/serverClient";
-import getFunctionClient from "@/lib/functionClient";
 import GET_ARTICLES from "@/gql/getArticles";
 import GET_ARTICLE_BY_ID from "@/gql/getArticleById";
 import UPDATE_ARTICLE_VIEWS from "@/gql/updateArticleViews";
 import { BLOG_NAME } from "@/constants";
-import { IArticle } from "@/interfaces";
 
 const blogName = BLOG_NAME;
-
-interface IClientArticles {
-  articles: IArticle[];
-}
 
 const getServerArticles = async () => {
   const { data } = await getServerClient().query({
