@@ -1,9 +1,9 @@
 import GET_ARTICLES from "@/gql/getArticles";
-import { BLOG_NAME } from "@/constants";
+import { BLOG_NAME, SITE_DOMAIN } from "@/constants";
 import functionClient from "@/lib/functionClient";
 import { IArticle } from "@/interfaces";
 
-const baseUrl = "https://healthy.storeall.com.ua";
+const baseUrl = SITE_DOMAIN;
 const blog = BLOG_NAME;
 const artsRoute = "articles";
 
@@ -21,19 +21,26 @@ const sitemap = async () => {
     await functionClient().query({
       query: GET_ARTICLES,
       variables: { blog },
+      context: {
+        fetchOptions: { cache: "no-store" },
+      },
     });
 
-  const locs = data.articles.map(({ id, timestamp }) => ({
+  const articles = data.articles.map(({ id, timestamp }) => ({
     url: `${baseUrl}/${artsRoute}/${id}`,
     lastModified: convertDate(timestamp),
+    changeFrequency: "weekly",
+    priority: 1,
   }));
 
   const routes = ["/", `/${artsRoute}`].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
+    changeFrequency: "monthly",
+    priority: 0.5,
   }));
 
-  return [...routes, ...locs];
+  return [...routes, ...articles];
 };
 
 export default sitemap;
