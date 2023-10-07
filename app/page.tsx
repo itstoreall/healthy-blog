@@ -7,7 +7,7 @@ import services from "@/services";
 export const metadata: Metadata = metadataHandler("/");
 
 const Home = async () => {
-  const articles = await services.getArticles();
+  const articles = await services.getServerArticles();
 
   return (
     <div className={s.content}>

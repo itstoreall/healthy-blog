@@ -1,5 +1,4 @@
 import { IViewCounterProps } from "./types";
-import { middleGrey } from "@/theme";
 import s from "./ViewCounter.module.scss";
 import Eye from "./Eye";
 
