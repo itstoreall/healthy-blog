@@ -16,7 +16,6 @@ import ArticleElements from "@/components/ArticleElements";
 const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  // const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   const articleText = JSON.parse(article?.text).articleElements;
 

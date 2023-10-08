@@ -1,18 +1,11 @@
-import {
-  BLOG_TITLE,
-  LS_VIEWS_KEY,
-  MONTHS,
-  SITE_DOMAIN,
-  THEME_BY_DEFAULT,
-  WEB3_STORAGE,
-} from "@/constants";
+import * as constants from "@/constants";
 
-const defaultTheme = THEME_BY_DEFAULT;
-const domain = SITE_DOMAIN;
-const blogTitle = BLOG_TITLE;
-const ipfs = WEB3_STORAGE;
-const lsViewsKey = LS_VIEWS_KEY;
-const months = MONTHS;
+const defaultTheme = constants.THEME_BY_DEFAULT;
+const domain = constants.SITE_DOMAIN;
+const blogTitle = constants.BLOG_TITLE;
+const ipfs = constants.WEB3_STORAGE;
+const lsViewsKey = constants.LS_VIEWS_KEY;
+const months = constants.MONTHS;
 
 export const globalConfig = {
   gen: {
@@ -59,4 +52,14 @@ export const globalConfig = {
   topThree: {
     label: "Топ три",
   },
+  tagTitle: {
+    key: "title",
+    h2: { pageTitle: "page_title" },
+    h3: {
+      cardSmall: "card_small",
+      cardMedium: "card_medium",
+      artSubtitle: "art_subtitle",
+    },
+  },
+  tagParagraph: { key: "paragraph", p: { artParagraph: "art_paragraph" } },
 };
