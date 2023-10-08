@@ -24,13 +24,13 @@
 
   span {
     @extend %extends-position-absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    @include transition($s04);
     @include borderRadius(34px);
+    @extend %extends-cursor-pointer;
+    @include transition($s04);
   }
 
   span:before {

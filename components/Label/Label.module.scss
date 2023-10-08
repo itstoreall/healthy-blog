@@ -14,7 +14,7 @@
     @include fontSW(12px, 700);
     letter-spacing: 1.2px;
     @include color(var(--text-invert));
-    @include uppercase();
+    @extend %extends-text-transform-uppercase;
     white-space: nowrap;
     @include bgColor(var(--contrast-background));
     @include borderRadius(15px);
