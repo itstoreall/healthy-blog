@@ -13,27 +13,7 @@
         @include paddingB(40px);
       }
 
-      .publicationDate {
-        @extend %extends-flex-x-between;
-        @include marginB(20px);
-        @extend %extends-font-size-14px;
-
-        @include minWidth($tablet) {
-          @include x(flex-start);
-        }
-
-        > p {
-          @extend %extends-color-middle-dark;
-
-          &.author {
-            @include minWidth($tablet) {
-              @include marginR(40px);
-            }
-          }
-
-          // &.timestamp { } // *
-        }
-      }
+      // ---------- PublicationInfoWrapper starts here!
 
       .thumb {
         @extend %extends-position-relative;
@@ -51,11 +31,7 @@
         }
       }
 
-      .id {
-        @include fontSize(12px);
-        @include marginB(30px);
-        @extend %extends-color-middle-dark;
-      }
+      // ---------- PublicationInfoWrapper ends here!
 
       .articleElements {
         > h3 {

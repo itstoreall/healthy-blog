@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
 import { IArticle } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "./LatestArticle.module.scss";
 import ImageHandler from "../Image/ImageHandler";
 import Title from "../Title";
@@ -46,10 +47,10 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
   return (
     <div className={s.latestArticleWrap}>
-      <Label text={"Остання публікація"} />
+      <Label text={cfg.latestArticle.label} />
 
       {latestArt && (
-        <Link href={`/articles/${latestArt.id}`}>
+        <Link href={`${cfg.articles.pathname}/${latestArt.id}`}>
           <div className={s.latestArticle}>
             <div className={s.thumb}>
               {latestArt?.views && (
@@ -62,7 +63,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
               <ImageHandler
                 cid={latestArt.ipfs}
-                alt={"всесвіт"}
+                alt={latestArt.title}
                 grayscale={imgFilter()}
               />
             </div>
