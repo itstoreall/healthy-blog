@@ -1,0 +1,39 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../theme/index";
+
+.publicationDate {
+  @extend %extends-flex-x-between;
+  @include marginB(20px);
+
+  @include minWidth($tablet) {
+    @include x(flex-start);
+  }
+
+  > p {
+    @extend %extends-font-size-12px;
+    @extend %extends-color-middle-grey;
+
+    @include minWidth($tablet) {
+      @include fontSize(14px);
+    }
+
+    &.author {
+      @include minWidth($tablet) {
+        @include marginR(40px);
+      }
+    }
+
+    // &.timestamp { } // *
+  }
+}
+
+.id {
+  @include marginB(30px);
+  @extend %extends-font-size-12px;
+  @extend %extends-color-middle-grey;
+
+  @include minWidth($tablet) {
+    @include fontSize(14px);
+  }
+}

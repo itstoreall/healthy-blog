@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { WEB3_STORAGE } from "@/constants";
+import { globalConfig as cfg } from "@/config";
 import defaultImage from "@/assets/images/defaultImage.jpg";
 
 export interface IImageHandlerProps {
@@ -9,10 +9,8 @@ export interface IImageHandlerProps {
   grayscale: number;
 }
 
-const ipfs = WEB3_STORAGE;
-
 const setImageSrc = (cid: string) =>
-  cid ? `https://${cid}.${ipfs}` : defaultImage;
+  cid ? `https://${cid}.${cfg.gen.ipfs}` : defaultImage;
 
 const ImageHandler = ({ cid, alt, grayscale }: IImageHandlerProps) => {
   const inlineStyle = {
