@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { getCurrentTheme } from "@/utils";
+import { getCurrentTheme, imgFilter } from "@/utils";
 import { IArticle } from "@/interfaces";
 import { globalConfig as cfg } from "@/config";
 import s from "./LatestArticle.module.scss";
@@ -15,7 +15,6 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   useEffect(() => {
     let latestDate: number = new Date(0).getTime();
@@ -64,7 +63,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
               <ImageHandler
                 cid={latestArt.ipfs}
                 alt={latestArt.title}
-                grayscale={imgFilter()}
+                grayscale={imgFilter(currentTheme)}
               />
             </div>
 
@@ -73,7 +72,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
                 <Title
                   tag={"h3"}
                   text={latestArt.title}
-                  style={"card_medium"}
+                  style={cfg.tagTitle.h3.cardMedium}
                 />
                 <p className={s.metaDescription}>{latestArt.description}</p>
               </div>
