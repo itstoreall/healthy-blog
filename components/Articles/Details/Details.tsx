@@ -15,7 +15,7 @@ import ArticleElements from "@/components/ArticleElements";
 const lsViewsKey = constants.LS_VIEWS_KEY;
 
 const convertDate = (timestamp: string) => {
-  const today = "Сегодня";
+  const today = "Сьогодні";
   const date = timestamp ? timestamp.split("-") : today;
   const months = constants.MONTHS;
   return timestamp
@@ -60,7 +60,7 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
 
           <div className={s.publicationDate}>
             <p className={s.author}>{`Автор: ${article.author}`}</p>
-            <p className={s.timestamp}>{`Публикация: ${convertDate(
+            <p className={s.timestamp}>{`Публікація: ${convertDate(
               article.timestamp
             )}`}</p>
           </div>
