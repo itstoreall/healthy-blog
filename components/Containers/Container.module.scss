@@ -38,13 +38,13 @@
   margin: 0 auto;
   width: 94%;
 
-  @include minWidth($tablet) {
+  @include mediaScreen('min', $tablet) {
     width: 96%;
   }
 }
 
 .cardContainer {
-  @include maxWidth($tablet - 1) {
+  @include mediaScreen('max', $tablet - 1) {
     margin: 0 auto;
     width: 92%;
   }

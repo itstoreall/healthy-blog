@@ -19,7 +19,7 @@
         @extend %extends-position-relative;
         @extend %extends-flex-x-center-y-center;
         @include marginB(20px);
-        @include borderRadius(8px);
+        @extend %extends-border-radius-8px;
         @extend %extends-overflow-hidden;
 
         @include mediaScreen("min", $tablet) {

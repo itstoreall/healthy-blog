@@ -6,10 +6,10 @@
 
 @mixin logo($size: 18px, $space: 4px) {
   font-size: $size;
-  font-weight: 400;
-  line-height: 1;
+  @extend %extends-font-weight-400;
+  @extend %extends-line-height-1;
   letter-spacing: $space;
-  text-transform: uppercase;
+  @extend %extends-text-transform-uppercase;
 }
 
 // ------- position
@@ -144,14 +144,6 @@
   color: $c;
 }
 
-@mixin uppercase() {
-  text-transform: uppercase;
-}
-
-@mixin wordWrap($ww) {
-  word-wrap: $ww;
-}
-
 // ------- background:
 
 @mixin bgColor($bgc) {
@@ -162,6 +154,12 @@
 
 @mixin borderRadius($br) {
   border-radius: $br;
+}
+
+// ------- border:
+
+@mixin overflowY($o) {
+  overflow-y: $o;
 }
 
 // ------- transition
@@ -201,19 +199,7 @@
   }
 }
 
-@mixin minWidth($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
-}
-
-@mixin maxWidth($width) {
-  @media screen and (max-width: $width) {
-    @content;
-  }
-}
-
-@mixin widthRange($minWidth, $maxWidth) {
+@mixin mediaScreenRange($minWidth, $maxWidth) {
   @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
     @content;
   }
@@ -224,19 +210,19 @@
 @mixin lineClamp($l: 2) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  @extend %extends-overflow-hidden;
+  overflow: hidden;
   -webkit-line-clamp: $l;
 }
 
 @mixin buttonStyle() {
   @include padding(5px 12px);
-  font-weight: 600;
+  @extend %extends-font-weight-600;
   @extend %extends-font-size-14px;
-  @include color($colorWhite);
-  @include bgColor($middleGrey);
-  @include borderRadius(4px);
-  cursor: pointer;
-  user-select: none;
+  @extend %extends-color-white;
+  @extend %extends-bgc-middleGrey;
+  @extend %extends-border-radius-4px;
+  @extend %extends-cursor-pointer;
+  @extend %extends-user-select-none;
 
   &:hover,
   &:focus {
@@ -246,13 +232,14 @@
 
 @mixin contrastSolidButton() {
   @include padding(8px 15px);
-  @include fontSW(14px, 600);
+  @extend %extends-font-size-14px;
+  @extend %extends-font-weight-600;
   @include color(var(--text-invert));
   @include bgColor(var(--contrast-background));
-  @include borderRadius(6px);
-  cursor: pointer;
-  @include transition($s04);
-  user-select: none;
+  @extend %extends-border-radius-6px;
+  @extend %extends-cursor-pointer;
+  @extend %extends-user-select-none;
+  @extend %extends-transition-04s-ease;
 
   &:hover {
     @include bgColor(var(--contrast-background-hover));
@@ -268,12 +255,12 @@
   @include padding(0 8px);
   @include height(26px);
   @include fontSize(12px);
-  font-weight: 400;
-  color: $colorWhite;
-  @include bgColor($middleGrey);
-  @include borderRadius(4px);
-  cursor: pointer;
-  user-select: none;
+  @extend %extends-font-weight-400;
+  @extend %extends-color-white;
+  @extend %extends-bgc-middleGrey;
+  @extend %extends-border-radius-4px;
+  @extend %extends-cursor-pointer;
+  @extend %extends-user-select-none;
 
   &:not(:last-child) {
     margin-right: 5px;
@@ -293,13 +280,13 @@
   }
 
   @extend %extends-font-size-14px;
-  @include lineHight(1.4);
+  @extend %extends-line-height-1_4;
 
-  @include minWidth($tablet) {
+  @include mediaScreen("min", $tablet) {
     @include fontSize(16px);
   }
 
-  @include minWidth($desktop) {
+  @include mediaScreen("min", $desktop) {
     @include fontSize(18px);
   }
 }

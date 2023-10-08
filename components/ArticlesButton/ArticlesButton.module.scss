@@ -12,14 +12,14 @@
     @include padding(4px);
     @include bgColor(var(--secondary-background));
     @include borderRadius(9px);
-    cursor: pointer;
+    @extend %extends-cursor-pointer;
     @include transition(background-color 0.4s ease);
 
     .articlesButton {
       @extend %extends-display-flex;
       @include padding(4px);
       border: 4px solid var(--contrast-background);
-      @include borderRadius(6px);
+      @extend %extends-border-radius-6px;
       @include transition(border-color 0.4s ease);
 
       svg {

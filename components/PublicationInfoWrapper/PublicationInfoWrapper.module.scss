@@ -6,7 +6,7 @@
   @extend %extends-flex-x-between;
   @include marginB(20px);
 
-  @include minWidth($tablet) {
+  @include mediaScreen("min", $tablet) {
     @include x(flex-start);
   }
 
@@ -14,12 +14,12 @@
     @extend %extends-font-size-12px;
     @extend %extends-color-middle-grey;
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include fontSize(14px);
     }
 
     &.author {
-      @include minWidth($tablet) {
+      @include mediaScreen("min", $tablet) {
         @include marginR(40px);
       }
     }
@@ -33,7 +33,7 @@
   @extend %extends-font-size-12px;
   @extend %extends-color-middle-grey;
 
-  @include minWidth($tablet) {
+  @include mediaScreen('min', $tablet) {
     @include fontSize(14px);
   }
 }
