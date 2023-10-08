@@ -3,13 +3,18 @@
 @import "../../theme/index";
 
 p.paragraph {
-  @extend %extends-font-size-16px;
   @extend %extends-line-height-1_4;
   @include color(var(--text-light));
 
-  // @include mediaScreen("min", $tablet) { @include fontSize(16px) }
+  &.art_description {
+    @extend %extends-font-size-16px;
+  }
 
-  // &.art_description { } // *
+  &.art_paragraph {
+    @extend %extends-font-size-14px;
 
-  // &.art_paragraph { } // *
+    @include mediaScreen("min", $tablet) {
+      @include fontSize(16px);
+    }
+  }
 }
