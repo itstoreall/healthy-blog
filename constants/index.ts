@@ -22,4 +22,5 @@ export const MONTHS = [
 ];
 
 export const BLOG_NAME = "healthy";
+export const BLOG_TITLE = "Healthy";
 export const LS_VIEWS_KEY = `*_${BLOG_NAME}_views:`;
