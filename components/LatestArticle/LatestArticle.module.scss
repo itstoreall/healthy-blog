@@ -31,7 +31,7 @@
       @extend %extends-position-relative;
       @extend %extends-width-100;
 
-      @include mediaScreen("min", $desktop - 0.1) {
+      @include mediaScreen("max", $desktop - 0.1) {
         @include marginB(20px);
       }
 

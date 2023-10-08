@@ -54,13 +54,13 @@ h3.title {
   // ----------- art_subtitle (Details):
 
   &.art_subtitle {
-    @extend %extends-font-size-18px;
+    @extend %extends-font-size-20px;
 
-    @include mediaScreen('min', $tablet) {
+    @include mediaScreen("min", $tablet) {
       @include fontSize(22px);
     }
 
-    @include mediaScreen('min', $desktop) {
+    @include mediaScreen("min", $desktop) {
       @include fontSize(24px);
     }
   }

@@ -2,19 +2,14 @@
 @import "../../styles/mixins";
 @import "../../theme/index";
 
-.paragraph {
-  &.art_paragraph {
-    @include color(var(--text-light));
+p.paragraph {
+  @extend %extends-font-size-16px;
+  @extend %extends-line-height-1_4;
+  @include color(var(--text-light));
 
-    @extend %extends-font-size-14px;
-    @extend %extends-line-height-1_4;
+  // @include mediaScreen("min", $tablet) { @include fontSize(16px) }
 
-    @include mediaScreen("min", $tablet) {
-      @include fontSize(16px);
-    }
+  // &.art_description { } // *
 
-    @include mediaScreen("min", $desktop) {
-      @include fontSize(18px);
-    }
-  }
+  // &.art_paragraph { } // *
 }
