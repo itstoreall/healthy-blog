@@ -3,6 +3,10 @@
 @import "../../theme/index";
 
 .articleElements {
+  @include mediaScreen("min", $desktop) {
+    @include width(90%);
+  }
+
   > h3 {
     @extend %extends-transition-04s-ease;
 

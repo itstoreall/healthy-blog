@@ -4,24 +4,17 @@
 // -------------- Page Description:
 
 .pageMeta {
-  > h2 {
-    @include marginB(20px);
-    @include fontSize(28px);
-    @extend %extends-transition-04s-ease;
-
-    @include mediaScreen('min', $tablet) {
-      @include width(80%);
-      @include fontSize(32px);
-    }
-
-    @include mediaScreen('min', $desktop) {
-      @include width(80%);
-      @include fontSize(36px);
-    }
+  @include mediaScreen("min", $desktop) {
+    @include width(90%);
   }
 
-  > p.description {
-    @include pageDescription();
+  > h2 {
+    @include marginB(20px);
+    @extend %extends-transition-04s-ease;
+  }
+
+  > p {
+    @extend %extends-transition-04s-ease;
   }
 }
 

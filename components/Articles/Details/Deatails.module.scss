@@ -33,21 +33,25 @@
 
       // ---------- PublicationInfoWrapper ends here!
 
-      .articleElements {
-        > h3 {
-          @extend %extends-transition-04s-ease;
+      .articleElementsWrap {
+        // ---------- ArticleElements is here!
 
-          &:not(:last-child) {
-            @include marginB(20px);
-            @include paddingT(10px);
+        > div {
+          > h3 {
+            @extend %extends-transition-04s-ease;
+
+            &:not(:last-child) {
+              @include marginB(20px);
+              @include paddingT(10px);
+            }
           }
-        }
 
-        > p {
-          @extend %extends-transition-04s-ease;
+          > p {
+            @extend %extends-transition-04s-ease;
 
-          &:not(:last-child) {
-            @include marginB(30px);
+            &:not(:last-child) {
+              @include marginB(30px);
+            }
           }
         }
       }

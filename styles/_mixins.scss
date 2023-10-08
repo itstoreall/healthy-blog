@@ -272,7 +272,6 @@
 }
 
 @mixin pageDescription() {
-  @include color(var(--text-light));
   @extend %extends-transition-04s-ease;
 
   &:not(:last-child) {
