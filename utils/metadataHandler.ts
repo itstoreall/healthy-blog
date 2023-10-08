@@ -1,10 +1,6 @@
 import { Metadata } from "next";
 import { IArticle } from "@/interfaces";
-// import { SITE_DOMAIN, WEB3_STORAGE } from "@/constants";
 import { globalConfig as cfg } from "@/config";
-
-// const domain = SITE_DOMAIN;
-// const ipfs = WEB3_STORAGE;
 
 const defaultImage = {
   url: `${cfg.gen.domain}/_next/static/media/defaultImage.d4887a00.jpg`,
@@ -16,13 +12,9 @@ const defaultImage = {
 export const home = {
   title: cfg.gen.blogTitle,
   description: cfg.home.meta.description,
-  // description:
-  //   "Вітаємо у світі Хелсі! Блог саморозвитку і пізнання себе, свого організму, здоров’я вашого та близьких вам людей. Ми допоможемо вам своєчасно помітити та розібратися, що саме може загрожувати членам вашої сім’ї. Завдяки нам зможете попередити багато захворювань, вчасно звернувшись до фахівців. Поговоримо про першу домедичну допомогу при різних захворюваннях, особливо коли симптоми з’являються вперше. Навчимо правилам догляду за хворими і багатьом навичкам середнього медичного персоналу.",
   openGraph: {
     title: cfg.gen.blogTitle,
     description: cfg.home.meta.description,
-    // description:
-    //   "Вітаємо у світі Хелсі! Блог саморозвитку і пізнання себе, свого організму, здоров’я вашого та близьких вам людей. Ми допоможемо вам своєчасно помітити та розібратися, що саме може загрожувати членам вашої сім’ї. Завдяки нам зможете попередити багато захворювань, вчасно звернувшись до фахівців. Поговоримо про першу домедичну допомогу при різних захворюваннях, особливо коли симптоми з’являються вперше. Навчимо правилам догляду за хворими і багатьом навичкам середнього медичного персоналу.",
     url: cfg.gen.domain,
     siteName: cfg.gen.blogTitle,
     images: [defaultImage],
@@ -33,14 +25,9 @@ export const home = {
 const articles = {
   title: cfg.articles.meta.title,
   description: cfg.articles.meta.description,
-  // title: "Статті про організм людини та здоров'я",
-  // description:
-  //   "Статті про організм людини, здоров'я та пізнання себе. Ми допоможемо вам розуміти можливі загрози для вашої родини та запобігти захворюванням, звернувшись до фахівців. Розкриваємо теми про першу допомогу при різних захворюваннях та основи догляду за хворими",
   openGraph: {
     title: cfg.articles.meta.title,
     description: cfg.articles.meta.description,
-    // description:
-    //   "Статті про організм людини, здоров'я та пізнання себе. Ми допоможемо вам розуміти можливі загрози для вашої родини та запобігти захворюванням, звернувшись до фахівців. Розкриваємо теми про першу допомогу при різних захворюваннях та основи догляду за хворими.",
     url: cfg.gen.domain,
     siteName: cfg.gen.blogTitle,
     images: [defaultImage],
