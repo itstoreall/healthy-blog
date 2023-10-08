@@ -7,13 +7,13 @@
     @include color(var(--text-light));
 
     @extend %extends-font-size-14px;
-    @include lineHight(1.4);
+    @extend %extends-line-height-1_4;
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include fontSize(16px);
     }
 
-    @include minWidth($desktop) {
+    @include mediaScreen("min", $desktop) {
       @include fontSize(18px);
     }
   }
