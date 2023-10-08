@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { getCurrentTheme, imgFilter } from "@/utils";
@@ -65,7 +64,9 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
             </div>
           </PublicationInfoWrapper>
 
-          <ArticleElements elements={articleText} />
+          <div className={s.articleElementsWrap}>
+            <ArticleElements elements={articleText} />
+          </div>
         </div>
       </article>
     </InnerContainer>

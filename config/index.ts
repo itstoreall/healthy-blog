@@ -61,5 +61,8 @@ export const globalConfig = {
       artSubtitle: "art_subtitle",
     },
   },
-  tagParagraph: { key: "paragraph", p: { artParagraph: "art_paragraph" } },
+  tagParagraph: {
+    key: "paragraph",
+    p: { artParagraph: "art_paragraph", artDescription: "art_description" },
+  },
 };
