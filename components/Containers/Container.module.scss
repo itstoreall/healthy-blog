@@ -13,15 +13,15 @@
   @extend %extends-position-relative;
   margin: 0 auto;
 
-  @include minWidth($mobile) {
+  @include mediaScreen("min", $mobile) {
     max-width: $mobile + 100;
   }
 
-  @include minWidth($tablet) {
+  @include mediaScreen("min", $tablet) {
     max-width: $tablet;
   }
 
-  @include minWidth($desktop) {
+  @include mediaScreen("min", $desktop) {
     max-width: $desktop;
   }
 }

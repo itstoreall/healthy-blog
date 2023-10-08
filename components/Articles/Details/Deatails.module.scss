@@ -22,11 +22,11 @@
         @include borderRadius(8px);
         @extend %extends-overflow-hidden;
 
-        @include minWidth($tablet) {
+        @include mediaScreen("min", $tablet) {
           @include borderRadius(10px);
         }
 
-        @include minWidth($desktop) {
+        @include mediaScreen("min", $desktop) {
           @include borderRadius(14px);
         }
       }

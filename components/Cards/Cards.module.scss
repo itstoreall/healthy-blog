@@ -8,7 +8,7 @@
     @include margin(0);
     @include marginB(-20px);
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include flexWrap(wrap);
 
       @include maxWidth($desktop - 1) {
@@ -27,11 +27,11 @@
         @extend %extends-box-shadow-hover;
       }
 
-      @include minWidth($tablet) {
+      @include mediaScreen("min", $tablet) {
         @include width(49%);
       }
 
-      @include minWidth($desktop) {
+      @include mediaScreen("min", $desktop) {
         @include width(32%);
 
         &:not(:nth-child(3n + 3)) {

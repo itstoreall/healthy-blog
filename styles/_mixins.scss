@@ -189,6 +189,18 @@
 
 // ------- @media
 
+@mixin mediaScreen($m, $w) {
+  @if $m == "min" {
+    @media screen and (min-width: $w) {
+      @content;
+    }
+  } @else if $m == "max" {
+    @media screen and (max-width: $w) {
+      @content;
+    }
+  }
+}
+
 @mixin minWidth($width) {
   @media screen and (min-width: $width) {
     @content;
