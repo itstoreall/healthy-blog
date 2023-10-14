@@ -22,6 +22,18 @@
   top: $t;
 }
 
+@mixin left($l) {
+  top: $l;
+}
+
+@mixin right($r) {
+  top: $r;
+}
+
+@mixin bottom($b) {
+  bottom: $b;
+}
+
 // ------- display
 
 @mixin display($display: block) {
@@ -176,6 +188,12 @@
 
 @mixin overflowY($o) {
   overflow-y: $o;
+}
+
+// ------- transition
+
+@mixin transformTranslateX($ttx) {
+  transform: translateX($ttx);
 }
 
 // ------- transition
