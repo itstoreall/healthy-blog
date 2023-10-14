@@ -7,7 +7,7 @@
 
   .latestArticle {
     @include padding(15px 15px 20px);
-    @include borderRadius(14px);
+    @extend %extends-border-radius-14px;
     @include bgColor(var(--background-hover));
     @extend %extends-box-shadow;
     @extend %extends-transition-04s-ease;
