@@ -116,6 +116,14 @@
   width: $width;
 }
 
+@mixin minWidth($mw) {
+  min-width: $mw;
+}
+
+@mixin maxWidth($mw) {
+  max-width: $mw;
+}
+
 @mixin height($height: auto) {
   height: $height;
 }
