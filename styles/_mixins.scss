@@ -5,10 +5,10 @@
 // ------- logo
 
 @mixin logo($size: 18px, $space: 4px) {
-  font-size: $size;
+  @include fontSize($size);
   @extend %extends-font-weight-400;
   @extend %extends-line-height-1;
-  letter-spacing: $space;
+  @include letterSpacing($space);
   @extend %extends-text-transform-uppercase;
 }
 
