@@ -10,7 +10,7 @@ h2.title {
   // ----------- page_title (Home, Details):
 
   &.page_title {
-    @include fontSize(28px);
+    @extend %extends-font-size-28px;
 
     @include mediaScreen("min", $tablet) {
       @include fontSize(32px);

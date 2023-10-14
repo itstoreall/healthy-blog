@@ -5,10 +5,10 @@
 // ------- logo
 
 @mixin logo($size: 18px, $space: 4px) {
-  font-size: $size;
+  @include fontSize($size);
   @extend %extends-font-weight-400;
   @extend %extends-line-height-1;
-  letter-spacing: $space;
+  @include letterSpacing($space);
   @extend %extends-text-transform-uppercase;
 }
 
@@ -16,6 +16,22 @@
 
 @mixin position($p) {
   position: $p;
+}
+
+@mixin top($t) {
+  top: $t;
+}
+
+@mixin left($l) {
+  left: $l;
+}
+
+@mixin right($r) {
+  right: $r;
+}
+
+@mixin bottom($b) {
+  bottom: $b;
 }
 
 // ------- display
@@ -116,6 +132,14 @@
   width: $width;
 }
 
+@mixin minWidth($mw) {
+  min-width: $mw;
+}
+
+@mixin maxWidth($mw) {
+  max-width: $mw;
+}
+
 @mixin height($height: auto) {
   height: $height;
 }
@@ -144,6 +168,10 @@
   color: $c;
 }
 
+@mixin letterSpacing($ls) {
+  letter-spacing: $ls;
+}
+
 // ------- background:
 
 @mixin bgColor($bgc) {
@@ -151,6 +179,14 @@
 }
 
 // ------- border:
+
+@mixin border($b) {
+  border: $b;
+}
+
+@mixin borderColor($bc) {
+  border-color: $bc;
+}
 
 @mixin borderRadius($br) {
   border-radius: $br;
@@ -160,6 +196,12 @@
 
 @mixin overflowY($o) {
   overflow-y: $o;
+}
+
+// ------- transition
+
+@mixin transformTranslateX($ttx) {
+  transform: translateX($ttx);
 }
 
 // ------- transition
@@ -183,6 +225,12 @@
 
     @content;
   }
+}
+
+// ------- other:
+
+@mixin fill($f) {
+  fill: $f;
 }
 
 // ------- @media

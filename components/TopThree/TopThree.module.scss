@@ -9,8 +9,8 @@
     .list {
       @include themeHandler() {
         @extend %extends-list-style-none;
-        @include padding(0);
-        @include margin(0);
+        @extend %extends-padding-0;
+        @extend %extends-margin-0;
         @include marginB(-20px);
 
         @include mediaScreen("min", $tablet) {
@@ -58,7 +58,7 @@
 
               h3 {
                 @include marginB(12px);
-                @include fontSize(15px);
+                @extend %extends-font-size-15px;
                 @include color(var(--text));
                 @extend %extends-line-clamp-1;
                 @extend %extends-transition-04s-ease;
