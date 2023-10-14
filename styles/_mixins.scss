@@ -18,6 +18,10 @@
   position: $p;
 }
 
+@mixin top($t) {
+  top: $t;
+}
+
 // ------- display
 
 @mixin display($display: block) {
@@ -150,6 +154,10 @@
 
 @mixin color($c) {
   color: $c;
+}
+
+@mixin letterSpacing($ls) {
+  letter-spacing: $ls;
 }
 
 // ------- background:
