@@ -170,6 +170,10 @@
   height: 60vh;
 }
 
+%extends-height-100vh {
+  height: 100vh;
+}
+
 // ----------- ul li:
 
 %extends-list-style-none {
@@ -348,6 +352,10 @@
 
 %extends-z-index-3 {
   z-index: 3;
+}
+
+%extends-z-index-4 {
+  z-index: 4;
 }
 
 // ----------- overflow:
