@@ -1,5 +1,4 @@
 "use client";
-
 import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
 import { IArticle } from "@/interfaces";
