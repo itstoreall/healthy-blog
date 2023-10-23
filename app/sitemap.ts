@@ -40,7 +40,11 @@ const sitemap = async () => {
     priority: 0.5,
   }));
 
-  return [...routes, ...articles];
+  const currentSitemap = [...routes, ...articles];
+
+  console.log("sitemap:", currentSitemap);
+
+  return currentSitemap;
 };
 
 export default sitemap;
