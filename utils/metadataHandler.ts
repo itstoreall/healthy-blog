@@ -11,10 +11,10 @@ const defaultImage = {
 };
 
 export const home = {
-  title: cfg.gen.blogTitle,
+  title: cfg.home.meta.title,
   description: cfg.home.meta.description,
   openGraph: {
-    title: cfg.gen.blogTitle,
+    title: cfg.home.meta.title,
     description: cfg.home.meta.description,
     url: cfg.gen.domain,
     siteName: cfg.gen.blogTitle,
@@ -29,7 +29,7 @@ const articles = {
   openGraph: {
     title: cfg.articles.meta.title,
     description: cfg.articles.meta.description,
-    url: cfg.gen.domain,
+    url: `${cfg.gen.domain}${cfg.articles.pathname}`,
     siteName: cfg.gen.blogTitle,
     images: [defaultImage],
     type: "article",
