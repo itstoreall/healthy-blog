@@ -26,7 +26,7 @@
 
           .logoLink {
             @extend %extends-flex-y-center;
-            @include logo(14px, 3px);
+            @include logo(14px, 2px);
             @include color(inherit);
 
             &:hover {

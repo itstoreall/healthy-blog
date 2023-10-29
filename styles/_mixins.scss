@@ -4,7 +4,7 @@
 
 // ------- logo
 
-@mixin logo($size: 18px, $space: 4px) {
+@mixin logo($size: 18px, $space: 2px) {
   @include fontSize($size);
   @extend %extends-font-weight-400;
   @extend %extends-line-height-1;

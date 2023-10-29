@@ -6,7 +6,6 @@ const defaultTheme = constants.THEME_BY_DEFAULT;
 const domain = constants.SITE_DOMAIN;
 const blogName = constants.BLOG_NAME;
 const blogTitle = constants.BLOG_TITLE;
-const siteName = constants.SITE_NAME;
 const defaultImagePath = `_next/static/media/defaultImage.${constants.DEFAULT_IMAGE_ID}.jpg`;
 const ipfs = `${ipfsLink}/${blogName}-image.jpg`;
 const lsViewsKey = constants.LS_VIEWS_KEY;
@@ -17,7 +16,6 @@ export const globalConfig = {
     defaultTheme,
     domain,
     blogTitle,
-    siteName,
     defaultImagePath,
     ipfs,
     lsViewsKey,
@@ -57,8 +55,8 @@ export const globalConfig = {
   latestArticle: {
     label: "Остання публікація",
   },
-  topThree: {
-    label: "Топ три",
+  topArticles: {
+    label: "Популярні статті",
   },
   tagTitle: {
     key: "title",

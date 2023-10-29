@@ -7,7 +7,7 @@ import s from "./index.module.scss";
 import InnerContainer from "../Containers/InnerContainer";
 import LatestArticle from "../LatestArticle";
 import PageMeta from "../Meta/PageMeta";
-import TopThree from "../TopThree";
+import TopArticles from "../TopArticles";
 
 const HomeContent = ({ articles }: { articles: IArticle[] }) => {
   const { theme } = useTheme();
@@ -25,7 +25,7 @@ const HomeContent = ({ articles }: { articles: IArticle[] }) => {
           {articles && (
             <>
               <LatestArticle articles={articles} />
-              <TopThree articles={articles} />
+              <TopArticles articles={articles} />
             </>
           )}
         </article>

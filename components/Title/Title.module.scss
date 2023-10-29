@@ -3,7 +3,7 @@
 @import "../../theme/index";
 
 h1.title {
-  @include logo(18px);
+  @include logo(18px, 2px);
 }
 
 h2.title {
@@ -23,7 +23,7 @@ h2.title {
 }
 
 h3.title {
-  // ----------- card_small (Articles, TopThree):
+  // ----------- card_small (Articles, TopArticles):
 
   &.card_small {
     @extend %extends-font-size-16px;
