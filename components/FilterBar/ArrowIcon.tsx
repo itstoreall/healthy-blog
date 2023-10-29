@@ -1,20 +1,10 @@
-interface IArrowIcon {
-  fill: string;
-  direction: string;
-  size: "s" | "m";
-}
-
-type SizesType = Record<
-  string,
-  { width: string; height: string; viewBox: string }
->;
+import { IArrowIcon, SizesType } from "./types";
 
 const ArrowIcon = ({ fill, direction, size }: IArrowIcon) => {
   const wrapStyle = {
-    backgroundColor: "teal",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    display: "flex",
     width: "12px",
     height: "12px",
   };

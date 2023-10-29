@@ -1,0 +1,32 @@
+@import "../../styles/extends";
+@import "../../theme/index";
+
+.filterBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px 20px;
+  // background-color: pink;
+
+  button.filterButton {
+    display: flex;
+    align-items: center;
+    @extend %extends-cursor-pointer;
+    // background-color: pink;
+
+    > span {
+      padding: 5px;
+      color: $middleGreyHover;
+      @extend %extends-font-size-10px;
+      @extend %extends-font-weight-600;
+      line-height: 1;
+      letter-spacing: 1px;
+      @extend %extends-text-transform-uppercase;
+    }
+
+    &:hover {
+      > span {
+        color: var(--contrast-background);
+      }
+    }
+  }
+}
