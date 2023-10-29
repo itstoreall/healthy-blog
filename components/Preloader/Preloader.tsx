@@ -1,7 +1,8 @@
 "use client";
-import { useTheme } from "next-themes";
-import s from "./Preloader.module.scss";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { globalConfig as cfg } from "@/config";
+import s from "./Preloader.module.scss";
 import Spinner from "../Loading/Spinner";
 
 const Preloader = () => {
@@ -16,7 +17,7 @@ const Preloader = () => {
       const lsTheme = localStorage.getItem("theme");
       setTheme(lsTheme ? lsTheme : "dark");
       globalWrapperElement.style.display = "block";
-      setTimeout(() => setIsPreloader(false), 3000);
+      setTimeout(() => setIsPreloader(false), cfg.gen.preloader.timeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

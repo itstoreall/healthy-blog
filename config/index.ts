@@ -20,6 +20,7 @@ export const globalConfig = {
     ipfs,
     lsViewsKey,
     months,
+    preloader: { timeout: 2000 },
   },
   home: {
     pathname: "/",
