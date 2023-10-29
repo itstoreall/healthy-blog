@@ -16,7 +16,7 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
     <InnerContainer>
       <div className={`${s.articlesWrap} ${s[currentTheme]}`}>
         <Label text={cfg.articles.content.articleList.label} />
-        <Cards articles={articles} />
+        <Cards articles={articles.reverse()} />
       </div>
     </InnerContainer>
   );
