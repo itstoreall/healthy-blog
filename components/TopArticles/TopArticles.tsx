@@ -1,34 +1,34 @@
 import { useEffect, useState } from "react";
 import { IArticle } from "@/interfaces";
 import { globalConfig as cfg } from "@/config";
-import s from "./TopThree.module.scss";
+import s from "./TopArticles.module.scss";
 import Label from "../Label";
 import Cards from "../Cards";
 
-const TopThree = ({ articles }: { articles: IArticle[] }) => {
-  const [topThree, setTopThree] = useState<IArticle[] | null>(null);
+const TopArticles = ({ articles }: { articles: IArticle[] }) => {
+  const [topArticles, setTopArticles] = useState<IArticle[] | null>(null);
 
   useEffect(() => {
-    const _topThree = articles
+    const popular = articles
       .filter((element) => element !== null)
       .sort((a, b) => Number(b.views) - Number(a.views))
-      .slice(0, 3);
+      .slice(0, 6);
 
-    if (_topThree?.length) {
-      setTopThree(_topThree);
+    if (popular?.length) {
+      setTopArticles(popular);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className={s.topThree}>
-      {topThree && (
+    <div className={s.topArticles}>
+      {topArticles && (
         <>
-          <Label text={cfg.topThree.label} />
+          <Label text={cfg.topArticles.label} />
 
           <div className={s.cards}>
-            <Cards articles={topThree} />
+            <Cards articles={topArticles} />
           </div>
         </>
       )}
@@ -36,4 +36,4 @@ const TopThree = ({ articles }: { articles: IArticle[] }) => {
   );
 };
 
-export default TopThree;
+export default TopArticles;

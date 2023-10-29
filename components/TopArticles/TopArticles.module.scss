@@ -1,7 +1,7 @@
 @import "../../styles/extends";
 @import "../../styles/mixins";
 
-.topThree {
+.topArticles {
   @include padding(60px 0 40px);
   @extend %extends-position-relative;
 
