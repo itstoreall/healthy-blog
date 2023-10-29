@@ -22,3 +22,4 @@ export const MONTHS = [
 export const BLOG_NAME = "healthy";
 export const BLOG_TITLE = "Хелсі Блог";
 export const LS_VIEWS_KEY = `*_${BLOG_NAME}_views:`;
+export const LS_FILTER_KEY = `*_${BLOG_NAME}_filter:`;
