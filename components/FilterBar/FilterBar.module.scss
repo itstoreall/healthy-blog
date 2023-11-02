@@ -4,28 +4,47 @@
 .filterBar {
   display: flex;
   justify-content: flex-end;
-  padding: 5px 20px 20px;
-  // background-color: pink;
+  padding: 0 10px 20px;
 
   button.filterButton {
+    padding: 0;
     display: flex;
     align-items: center;
+    height: 40px;
     @extend %extends-cursor-pointer;
-    // background-color: pink;
 
+    // svg (CalendarIcon):
     > span {
-      padding: 5px;
-      color: $middleGreyHover;
-      @extend %extends-font-size-10px;
-      @extend %extends-font-weight-600;
-      line-height: 1;
-      letter-spacing: 1px;
-      @extend %extends-text-transform-uppercase;
+      &:nth-child(1) {
+        margin-right: 7px;
+
+        > svg {
+          fill: $middleDark;
+          @extend %extends-transition-04s-ease;
+        }
+      }
+
+      &:nth-child(2) {
+        > svg path {
+          stroke: $middleDark;
+          @extend %extends-transition-04s-ease;
+        }
+      }
     }
 
     &:hover {
       > span {
-        color: var(--contrast-background);
+        &:nth-child(1) {
+          > svg {
+            fill: var(--contrast-background);
+          }
+        }
+
+        &:nth-child(2) {
+          > svg path {
+            stroke: var(--contrast-background);
+          }
+        }
       }
     }
   }
