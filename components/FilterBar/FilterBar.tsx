@@ -4,6 +4,7 @@ import { middleGreyHover } from "../../theme";
 import s from "./FilterBar.module.scss";
 import ArrowIcon from "./ArrowIcon";
 import { useEffect } from "react";
+import CalendarIcon from "./CalendarIcon";
 
 const FilterBar = ({ arts, setArts }: IFilterBarProps) => {
   useEffect(() => {
@@ -43,7 +44,7 @@ const FilterBar = ({ arts, setArts }: IFilterBarProps) => {
   return (
     <div className={s.filterBar}>
       <button className={s.filterButton} onClick={() => sortArticles("date")}>
-        <span>сортувати</span>
+        <CalendarIcon fill={middleGreyHover} size={"m"} />
         <ArrowIcon fill={middleGreyHover} direction={arts.order} size={"m"} />
       </button>
     </div>

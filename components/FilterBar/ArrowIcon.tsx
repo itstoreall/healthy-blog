@@ -23,7 +23,7 @@ const ArrowIcon = ({ fill, direction, size }: IArrowIcon) => {
   };
 
   return (
-    <div style={wrapStyle}>
+    <span style={wrapStyle}>
       <svg
         width={sizes[size].width}
         height={sizes[size].height}
@@ -34,12 +34,12 @@ const ArrowIcon = ({ fill, direction, size }: IArrowIcon) => {
       >
         <path
           d="M20 11L11 2L2.14876 11"
-          stroke={fill}
+          id="arrow"
           strokeWidth="2.5"
           strokeLinecap="round"
         />
       </svg>
-    </div>
+    </span>
   );
 };
 
