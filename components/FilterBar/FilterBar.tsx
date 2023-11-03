@@ -1,35 +1,32 @@
 import { IFilterBarProps } from "./types";
-import { globalConfig as cfg } from "@/config";
+// import { globalConfig as cfg } from "@/config";
 import { middleGreyHover } from "../../theme";
 import s from "./FilterBar.module.scss";
 import ArrowIcon from "./ArrowIcon";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import CalendarIcon from "./CalendarIcon";
 
 const FilterBar = ({ arts, setArts }: IFilterBarProps) => {
-  useEffect(() => {
-    const lsFilterBar = localStorage.getItem(cfg.gen.lsFilterKey);
-    if (lsFilterBar) {
-      const lsArtsConfig = JSON.parse(lsFilterBar);
-      setArts({ ...arts, ...lsArtsConfig });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   const lsFilterBar = localStorage.getItem(cfg.gen.lsFilterKey);
+  //   if (lsFilterBar) {
+  //     const lsArtsConfig = JSON.parse(lsFilterBar);
+  //     setArts({ ...arts, ...lsArtsConfig });
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem(
-      cfg.gen.lsFilterKey,
-      JSON.stringify({ label: arts.label, order: arts.order })
-    );
-  }, [arts]);
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     cfg.gen.lsFilterKey,
+  //     JSON.stringify({ label: arts.label, order: arts.order })
+  //   );
+  // }, [arts]);
 
   const sortArticles = (label: string) => {
     if (!arts) return;
-
     const raw = arts.articles;
-
     let sorted = { label: "", order: "", articles: raw };
-
     if (label === "date") {
       const revesed = raw.reverse();
       const direction = arts.order === "up" ? "down" : "up";
