@@ -21,7 +21,7 @@
       @include bgColor(var(--background-hover));
       @extend %extends-border-radius-8px;
       @extend %extends-box-shadow;
-      @extend %extends-transition-04s-ease;
+      @extend %extends-transition-box-shadow-04s-ease;
 
       &:hover {
         @extend %extends-box-shadow-hover;

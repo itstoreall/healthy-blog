@@ -455,6 +455,11 @@
   transition: 0.4s ease;
 }
 
+%extends-transition-box-shadow-04s-ease {
+  -webkit-transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease;
+}
+
 %extends-transition-bgc-04s-ease {
   -webkit-transition: background-color 0.4s ease;
   transition: background-color 0.4s ease;
