@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
+import { setOrder } from "../FilterBar/utils";
 import { globalConfig as cfg } from "@/config";
+import artsCfg from "../FilterBar/config";
 import { IArticle } from "@/interfaces";
 import { IArtsState } from "./types";
 import s from "./Articles.module.scss";
@@ -18,9 +20,11 @@ const Articles = ({ articles }: { articles: IArticle[] }) => {
   const currentTheme = getCurrentTheme(theme);
 
   useEffect(() => {
-    const firstDate: Date = new Date(articles[0].timestamp);
-    const lastDate: Date = new Date(articles[articles.length - 1].timestamp);
-    const order = firstDate > lastDate ? "down" : "up";
+    const order = setOrder(
+      artsCfg.labels.date,
+      articles[0].timestamp,
+      articles[articles.length - 1].timestamp
+    );
     !arts && setArts({ label: "", order, articles });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [articles]);
