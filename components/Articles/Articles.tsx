@@ -32,7 +32,7 @@ const Articles = ({ articles }: { articles: IArticle[] }) => {
 
         {arts && (
           <>
-            <FilterBar arts={arts} setArts={setArts} />
+            <FilterBar initArts={articles} arts={arts} setArts={setArts} />
             <ArticleList articles={arts?.articles} />
           </>
         )}

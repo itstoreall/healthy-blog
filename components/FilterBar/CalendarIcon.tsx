@@ -10,7 +10,7 @@ const CalendarIcon = ({ fill, size }: Omit<IArrowIcon, "direction">) => {
     m: {
       width: "24",
       height: "24",
-      viewBox: "0 0 32 32",
+      viewBox: "-2 0 33 32",
     },
   };
 

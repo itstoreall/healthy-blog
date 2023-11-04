@@ -1,48 +1,59 @@
 import { IFilterBarProps } from "./types";
-// import { globalConfig as cfg } from "@/config";
 import { middleGreyHover } from "../../theme";
 import s from "./FilterBar.module.scss";
-import ArrowIcon from "./ArrowIcon";
-// import { useEffect } from "react";
+import Eye from "./Eye";
 import CalendarIcon from "./CalendarIcon";
+import ArrowIcon from "./ArrowIcon";
 
-const FilterBar = ({ arts, setArts }: IFilterBarProps) => {
-  // useEffect(() => {
-  //   const lsFilterBar = localStorage.getItem(cfg.gen.lsFilterKey);
-  //   if (lsFilterBar) {
-  //     const lsArtsConfig = JSON.parse(lsFilterBar);
-  //     setArts({ ...arts, ...lsArtsConfig });
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem(
-  //     cfg.gen.lsFilterKey,
-  //     JSON.stringify({ label: arts.label, order: arts.order })
-  //   );
-  // }, [arts]);
-
+const FilterBar = ({ initArts, arts, setArts }: IFilterBarProps) => {
   const sortArticles = (label: string) => {
     if (!arts) return;
-    const raw = arts.articles;
-    let sorted = { label: "", order: "", articles: raw };
+
+    const raw = initArts;
+    const reverseOrder = arts.order === "up" ? "down" : "up";
+
     if (label === "date") {
       const revesed = raw.reverse();
-      const direction = arts.order === "up" ? "down" : "up";
-      sorted = { label, order: direction, articles: revesed };
+      setArts({ label, order: reverseOrder, articles: revesed });
     }
 
-    setArts(sorted);
+    if (label === "views") {
+      const sortedByViews = (order: string) =>
+        raw
+          .slice()
+          .sort((a, b) =>
+            order === "up"
+              ? Number(a.views) - Number(b.views)
+              : Number(b.views) - Number(a.views)
+          );
+
+      setArts({
+        label,
+        order: reverseOrder,
+        articles: sortedByViews(arts.order),
+      });
+    }
   };
 
   console.log("arts", arts);
 
   return (
     <div className={s.filterBar}>
+      <button className={s.filterButton} onClick={() => sortArticles("views")}>
+        <Eye fill={middleGreyHover} size={"m"} />
+        <ArrowIcon
+          fill={middleGreyHover}
+          direction={arts.label === "views" ? arts.order : "down"}
+          size={"m"}
+        />
+      </button>
       <button className={s.filterButton} onClick={() => sortArticles("date")}>
         <CalendarIcon fill={middleGreyHover} size={"m"} />
-        <ArrowIcon fill={middleGreyHover} direction={arts.order} size={"m"} />
+        <ArrowIcon
+          fill={middleGreyHover}
+          direction={arts.label === "date" ? arts.order : "down"}
+          size={"m"}
+        />
       </button>
     </div>
   );
