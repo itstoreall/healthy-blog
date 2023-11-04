@@ -1,6 +1,12 @@
 import { IArtsState } from "@/components/Articles/types";
 import { IArticle } from "@/interfaces";
 
+export type SetOrderType = <F, S>(
+  label: string,
+  firstValue: F,
+  secondValue: S
+) => string;
+
 export interface IFilterBarProps {
   initArts: IArticle[];
   arts: IArtsState;
