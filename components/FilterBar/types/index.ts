@@ -1,6 +1,8 @@
 import { IArtsState } from "@/components/Articles/types";
+import { IArticle } from "@/interfaces";
 
 export interface IFilterBarProps {
+  initArts: IArticle[];
   arts: IArtsState;
   setArts: (a: IArtsState) => void;
 }
