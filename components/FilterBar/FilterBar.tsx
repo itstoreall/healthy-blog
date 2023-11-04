@@ -59,11 +59,14 @@ const FilterBar = ({ initArts, arts, setArts }: IFilterBarProps) => {
     }
   };
 
-  // console.log(0, "arts", arts);
+  console.log(0, "arts", arts);
 
   return (
     <div className={s.filterBar}>
-      <button className={s.filterButton} onClick={() => sortArticles(views)}>
+      <button
+        className={`${s.filterButton} ${s[arts.label === views ? views : ""]}`}
+        onClick={() => sortArticles(views)}
+      >
         <Eye fill={middleGreyHover} size={"m"} />
         <ArrowIcon
           fill={middleGreyHover}
@@ -71,7 +74,10 @@ const FilterBar = ({ initArts, arts, setArts }: IFilterBarProps) => {
           size={"m"}
         />
       </button>
-      <button className={s.filterButton} onClick={() => sortArticles(date)}>
+      <button
+        className={`${s.filterButton} ${s[arts.label === date ? date : ""]}`}
+        onClick={() => sortArticles(date)}
+      >
         <CalendarIcon fill={middleGreyHover} size={"m"} />
         <ArrowIcon
           fill={middleGreyHover}

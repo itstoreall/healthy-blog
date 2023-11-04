@@ -1,6 +1,18 @@
 @import "../../styles/extends";
 @import "../../theme/index";
 
+@mixin hoveredButton() {
+  > span {
+    &:nth-child(1) > svg {
+      fill: var(--contrast-background);
+    }
+
+    &:nth-child(2) > svg path {
+      stroke: var(--contrast-background);
+    }
+  }
+}
+
 .filterBar {
   display: flex;
   justify-content: flex-end;
@@ -33,20 +45,10 @@
       }
     }
 
+    &.views,
+    &.date,
     &:hover {
-      > span {
-        &:nth-child(1) {
-          > svg {
-            fill: var(--contrast-background);
-          }
-        }
-
-        &:nth-child(2) {
-          > svg path {
-            stroke: var(--contrast-background);
-          }
-        }
-      }
+      @include hoveredButton();
     }
   }
 }
