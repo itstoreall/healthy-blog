@@ -1,0 +1,52 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.progressLine {
+  @include themeHandler() {
+    @extend %extends-position-absolute;
+    @extend %extends-top-0;
+    @extend %extends-right-0;
+    width: 0px;
+    @extend %extends-z-index-2;
+
+    .goToTopButtonWrap {
+      @extend %extends-position-fixed;
+      right: 25px;
+      bottom: 25px;
+      @extend %extends-opacity-0;
+      @extend %extends-transition-04s-ease;
+
+      .goToTopButton {
+        @extend %extends-flex-x-center-y-center;
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--contrast-background);
+        @extend %extends-border-radius-50;
+        @extend %extends-cursor-pointer;
+        @extend %extends-transition-04s-ease;
+
+        > div > svg path {
+          stroke: var(--contrast-background);
+          @extend %extends-transition-04s-ease;
+        }
+      }
+
+      &:hover {
+        @extend %extends-opacity-1;
+
+        .goToTopButton {
+          border-color: var(--contrast-background-hover);
+
+          > div > svg path {
+            stroke: var(--contrast-background-hover);
+          }
+        }
+      }
+
+      &.visible {
+        @extend %extends-opacity-0_8;
+      }
+    }
+  }
+}

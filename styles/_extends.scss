@@ -448,6 +448,14 @@
   opacity: 0.6;
 }
 
+%extends-opacity-0_8 {
+  opacity: 0.8;
+}
+
+%extends-opacity-1 {
+  opacity: 1;
+}
+
 // ----------- transition:
 
 %extends-transition-04s-ease {

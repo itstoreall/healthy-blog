@@ -6,6 +6,7 @@ import Preloader from "@/components/Preloader";
 import Header from "@/components/Header";
 import MainContainer from "@/components/Containers/MainContainer";
 import Footer from "@/components/Footer";
+import GoToTopButton from "@/components/GoToTopButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
               <MainContainer>{children}</MainContainer>
             </main>
             <Footer />
+            <GoToTopButton/>
           </div>
         </NextThemeProvider>
       </body>
