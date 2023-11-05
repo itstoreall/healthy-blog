@@ -59,7 +59,7 @@ const FilterBar = ({ initArts, arts, setArts }: IFilterBarProps) => {
     }
   };
 
-  console.log(0, "arts", arts);
+  // console.log(0, "arts", arts);
 
   return (
     <div className={s.filterBar}>
