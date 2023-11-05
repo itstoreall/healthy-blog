@@ -12,6 +12,8 @@ const GoToTopButton = () => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
 
+  console.log("isVisible", isVisible);
+
   const visibleValue = () => (window.scrollY > cfg.visibleValue ? true : false);
   const visibleStyle = isVisible ? cfg.visibleStyle : "";
   const scrollConfig = cfg.scroll as ScrollToOptions;

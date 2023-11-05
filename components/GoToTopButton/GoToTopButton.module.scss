@@ -26,6 +26,18 @@
         @extend %extends-cursor-pointer;
         @extend %extends-transition-04s-ease;
 
+        &:before {
+          content: "";
+          @extend %extends-position-absolute;
+          width: 42px;
+          height: 42px;
+          @extend %extends-border-radius-50;
+          @extend %extends-z-index--1;
+          background-color: var(--contrast-background);
+          @extend %extends-opacity-0;
+          @extend %extends-transition-04s-ease;
+        }
+
         > div > svg path {
           stroke: var(--contrast-background);
           @extend %extends-transition-04s-ease;
@@ -33,8 +45,6 @@
       }
 
       &:hover {
-        @extend %extends-opacity-1;
-
         .goToTopButton {
           border-color: var(--contrast-background-hover);
 
@@ -45,7 +55,15 @@
       }
 
       &.visible {
-        @extend %extends-opacity-0_8;
+        @extend %extends-opacity-0_4;
+
+        &:hover {
+          @extend %extends-opacity-1;
+
+          .goToTopButton:before {
+            @extend %extends-opacity-0_1;
+          }
+        }
       }
     }
   }
