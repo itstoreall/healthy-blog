@@ -62,11 +62,11 @@ export const globalConfig = {
   },
   tagTitle: {
     key: "title",
-    h2: { pageTitle: "page_title" },
+    h2: { pageTitle: "page_title", artSubtitle: "art_subtitle", },
     h3: {
       cardSmall: "card_small",
       cardMedium: "card_medium",
-      artSubtitle: "art_subtitle",
+      // artSubtitle: "art_subtitle",
     },
   },
   tagParagraph: {

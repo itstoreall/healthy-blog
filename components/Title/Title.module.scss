@@ -2,6 +2,19 @@
 @import "../../styles/vars";
 @import "../../theme/index";
 
+// ------ reusable
+.art_subtitle {
+  @extend %extends-font-size-20px;
+
+  @include mediaScreen("min", $tablet) {
+    @include fontSize(22px);
+  }
+
+  @include mediaScreen("min", $desktop) {
+    @include fontSize(24px);
+  }
+}
+
 h1.title {
   @include logo(18px, 2px);
 }
@@ -19,6 +32,12 @@ h2.title {
     @include mediaScreen("min", $desktop) {
       @include fontSize(36px);
     }
+  }
+
+  // ----------- art_subtitle (Details):
+
+  &.art_subtitle {
+    @extend .art_subtitle;
   }
 }
 
@@ -53,15 +72,7 @@ h3.title {
 
   // ----------- art_subtitle (Details):
 
-  &.art_subtitle {
-    @extend %extends-font-size-20px;
-
-    @include mediaScreen("min", $tablet) {
-      @include fontSize(22px);
-    }
-
-    @include mediaScreen("min", $desktop) {
-      @include fontSize(24px);
-    }
-  }
+  // &.art_subtitle {
+  //   @extend .art_subtitle;
+  // }
 }
