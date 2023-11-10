@@ -7,7 +7,7 @@
     @include width(90%);
   }
 
-  > h3 {
+  > h2 {
     @extend %extends-transition-04s-ease;
 
     &:not(:last-child) {
