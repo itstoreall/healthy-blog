@@ -9,7 +9,7 @@
   }
 
   > h2 {
-    @include marginB(20px);
+    @include marginB(30px);
     @extend %extends-transition-04s-ease;
   }
 

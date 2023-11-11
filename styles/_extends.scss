@@ -230,8 +230,16 @@
   font-size: 20px;
 }
 
+%extends-font-size-22px {
+  font-size: 22px;
+}
+
 %extends-font-size-28px {
   font-size: 28px;
+}
+
+%extends-font-size-30px {
+  font-size: 30px;
 }
 
 // - font-weight:
@@ -326,6 +334,10 @@
 
 %extends-border-none {
   border: none;
+}
+
+%extends-border-1px-solid-middleDark {
+  border: 1px solid $middleDark;
 }
 
 %extends-border-radius-50 {

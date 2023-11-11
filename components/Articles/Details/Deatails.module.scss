@@ -5,12 +5,14 @@
 .details {
   @include themeHandler() {
     .articleDetails {
-      @include marginB(80px);
-
-      // ---------- Main Description is here!
+      // ---------- Main Description:
 
       > div:nth-child(1) {
         @include paddingB(40px);
+
+        @include mediaScreen("min", $tablet) {
+          @include paddingB(60px);
+        }
       }
 
       // ---------- PublicationInfoWrapper starts here!
@@ -33,28 +35,7 @@
 
       // ---------- PublicationInfoWrapper ends here!
 
-      .articleElementsWrap {
-        // ---------- ArticleElements is here!
-
-        > div {
-          > h3 {
-            @extend %extends-transition-04s-ease;
-
-            &:not(:last-child) {
-              @include marginB(20px);
-              @include paddingT(10px);
-            }
-          }
-
-          > p {
-            @extend %extends-transition-04s-ease;
-
-            &:not(:last-child) {
-              @include marginB(30px);
-            }
-          }
-        }
-      }
+      // .articleElementsWrap { } // *
     }
   }
 }
