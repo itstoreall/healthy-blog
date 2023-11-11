@@ -7,14 +7,13 @@ p.paragraph {
   @include color(var(--text-light));
 
   &.art_description {
-    @extend %extends-font-size-16px;
+    @extend %extends-font-size-18px;
   }
 
   &.art_paragraph {
-    @extend %extends-font-size-14px;
-
+    @extend %extends-font-size-16px;
     @include mediaScreen("min", $tablet) {
-      @include fontSize(16px);
+      @include fontSize(18px);
     }
   }
 }

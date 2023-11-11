@@ -3,16 +3,24 @@
 @import "../../theme/index";
 
 .articleElements {
-  @include mediaScreen("min", $desktop) {
-    @include width(90%);
+  @include mediaScreen("min", $tablet) {
+    @include padding(0 50px 50px);
   }
 
   > h2 {
     @extend %extends-transition-04s-ease;
 
     &:not(:last-child) {
-      @include marginB(20px);
+      @include marginB(30px);
       @include paddingT(10px);
+
+      @include mediaScreen("min", $tablet) {
+        @include paddingT(30px);
+      }
+    }
+
+    @include mediaScreen("min", $desktop) {
+      @include width(80%);
     }
   }
 
