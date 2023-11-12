@@ -20,6 +20,7 @@ const HomeContent = ({ articles }: { articles: IArticle[] }) => {
           <PageMeta
             title={cfg.home.content.title}
             description={cfg.home.meta.description}
+            location={"home"}
           />
 
           {articles && (

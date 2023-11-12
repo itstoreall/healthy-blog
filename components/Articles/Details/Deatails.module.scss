@@ -11,7 +11,7 @@
         @include paddingB(40px);
 
         @include mediaScreen("min", $tablet) {
-          @include paddingB(60px);
+          @include paddingB(50px);
         }
       }
 

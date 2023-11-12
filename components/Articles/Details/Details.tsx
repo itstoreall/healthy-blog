@@ -44,7 +44,11 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
     <InnerContainer>
       <article className={`${s.details} ${s[currentTheme]}`}>
         <div className={s.articleDetails}>
-          <PageMeta title={article.title} description={article.description} />
+          <PageMeta
+            title={article.title}
+            description={article.description}
+            location={"details"}
+          />
 
           <PublicationInfoWrapper article={article}>
             <div className={s.thumb}>
