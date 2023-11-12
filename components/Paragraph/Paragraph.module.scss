@@ -13,9 +13,9 @@ p.paragraph {
       @include fontSize(18px);
     }
 
-    @include mediaScreen("min", $tablet) {
-      @include fontSize(20px);
-    }
+    // @include mediaScreen("min", $tablet) {
+    //   @include fontSize(20px);
+    // }
   }
 
   &.art_paragraph {
