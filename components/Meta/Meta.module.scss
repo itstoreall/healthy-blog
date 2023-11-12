@@ -4,10 +4,6 @@
 // -------------- Page Description:
 
 .pageMeta {
-  // @include mediaScreen("min", $desktop) {
-  //   @include width(90%);
-  // }
-
   > h2 {
     @include marginB(30px);
     @extend %extends-transition-04s-ease;
@@ -15,6 +11,14 @@
 
   > p {
     @extend %extends-transition-04s-ease;
+  }
+
+  // &.home { } // *
+
+  &.details {
+    @include mediaScreen("min", $desktop) {
+      @include width(90%);
+    }
   }
 }
 
