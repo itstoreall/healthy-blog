@@ -37,6 +37,7 @@ const Cards = ({ articles }: { articles: IArticle[] }) => {
                 <CardSmallMeta
                   title={art.title}
                   description={art.description}
+                  location={""}
                 />
               </div>
             </div>
