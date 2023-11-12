@@ -4,9 +4,9 @@
 // -------------- Page Description:
 
 .pageMeta {
-  @include mediaScreen("min", $desktop) {
-    @include width(90%);
-  }
+  // @include mediaScreen("min", $desktop) {
+  //   @include width(90%);
+  // }
 
   > h2 {
     @include marginB(30px);
