@@ -10,7 +10,7 @@
   @extend %extends-border-radius-15px;
   @extend %extends-z-index-1;
 
-  // ------- Eye (svg):
+  // ------- EyeIcon (svg):
 
   > div:nth-child(1) {
     @include marginR(5px);

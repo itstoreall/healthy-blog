@@ -1,6 +1,6 @@
-import { IArrowIcon, SizesType } from "./types";
+import { IconProps, SizesType } from "../types";
 
-const ArrowIcon = ({ fill, direction, size }: IArrowIcon) => {
+const ArrowIcon = ({ fill, direction, size }: IconProps) => {
   const wrapStyle = {
     display: "flex",
     justifyContent: "center",
