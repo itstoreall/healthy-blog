@@ -1,6 +1,6 @@
-import { IArrowIcon, SizesType } from "./types";
+import { IconProps, SizesType } from "../types";
 
-const CalendarIcon = ({ fill, size }: Omit<IArrowIcon, "direction">) => {
+const CalendarIcon = ({ fill, size }: Omit<IconProps, "direction">) => {
   const wrapStyle = {
     width: "24px",
     height: "24px",
