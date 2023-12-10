@@ -1,7 +1,7 @@
-import filterCfg from "../config";
+import { filterConfig } from "../config";
 import { SetOrderType } from "../types";
 
-const { labels, orders } = filterCfg;
+const { labels, orders } = filterConfig;
 const date = labels.date;
 const views = labels.views;
 const up = orders.up;

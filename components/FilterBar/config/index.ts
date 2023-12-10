@@ -1,7 +1,10 @@
-const filterConfig = {
+import { Inputs } from "../types";
+
+export const filterConfig = {
   labels: {
     date: "date",
     views: "views",
+    search: "search",
   },
   orders: {
     down: "down",
@@ -9,4 +12,8 @@ const filterConfig = {
   },
 };
 
-export default filterConfig;
+export const inputConfig = {
+  searchByHash: {
+    label: "searchByHash" as Inputs,
+  },
+};

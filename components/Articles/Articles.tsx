@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
 import { setOrder } from "../FilterBar/utils";
 import { globalConfig as cfg } from "@/config";
-import artsCfg from "../FilterBar/config";
+import { filterConfig } from "../FilterBar/config";
 import { IArticle } from "@/interfaces";
 import { IArtsState } from "./types";
 import s from "./Articles.module.scss";
@@ -21,7 +21,7 @@ const Articles = ({ articles }: { articles: IArticle[] }) => {
 
   useEffect(() => {
     const order = setOrder(
-      artsCfg.labels.date,
+      filterConfig.labels.date,
       articles[0].timestamp,
       articles[articles.length - 1].timestamp
     );

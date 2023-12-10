@@ -1,0 +1,54 @@
+@import "../../../styles/imports";
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include mediaScreen("min", $tablet) {
+    width: 361px;
+  }
+
+  @include mediaScreen("min", $desktop) {
+    width: 296px;
+  }
+
+  > span {
+    padding-left: 10px;
+    padding-right: 7px;
+    position: absolute;
+
+    // > svg {
+    //   fill: $middleDark;
+    // }
+  }
+
+  input.modalInput {
+    padding: 0 10px 0 40px;
+    margin: 0;
+    height: 38px;
+    width: 100%;
+    font-size: 16px;
+    color: $middleDark;
+    background-color: transparent;
+    border: 1px solid $middleDark;
+    outline: none;
+    border-radius: 6px;
+
+    &::placeholder {
+      color: $middleDark;
+    }
+
+    &:focus {
+      color: $contrstDark;
+      border: 1px solid $contrstDark;
+    }
+
+    /*
+    &:disabled {
+      border-color: $colorGlobal050;
+      color: $colorGlobal050;
+    }
+    */
+  }
+}
