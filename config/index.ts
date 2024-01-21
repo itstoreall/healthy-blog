@@ -4,10 +4,10 @@ const ipfsLink = process.env.ipfsLink;
 
 const defaultTheme = constants.THEME_BY_DEFAULT;
 const domain = constants.SITE_DOMAIN;
-const blogName = constants.BLOG_NAME;
+// const blogName = constants.BLOG_NAME;
 const blogTitle = constants.BLOG_TITLE;
 const defaultImagePath = `_next/static/media/defaultImage.${constants.DEFAULT_IMAGE_ID}.jpg`;
-const ipfs = `${ipfsLink}/${blogName}-image.jpg`;
+const ipfs = `${ipfsLink}`; // ${ipfsLink}/${blogName}-image.jpg
 const lsViewsKey = constants.LS_VIEWS_KEY;
 const lsFilterKey = constants.LS_FILTER_KEY;
 const months = constants.MONTHS;
@@ -62,7 +62,7 @@ export const globalConfig = {
   },
   tagTitle: {
     key: "title",
-    h2: { pageTitle: "page_title", artSubtitle: "art_subtitle", },
+    h2: { pageTitle: "page_title", artSubtitle: "art_subtitle" },
     h3: {
       cardSmall: "card_small",
       cardMedium: "card_medium",
